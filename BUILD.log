@@ -1,0 +1,230 @@
+$ grunt build
+Running "clean:dist" (clean) task
+
+Running "bower-install:app" (bower-install) task
+
+Running "useminPrepare:html" (useminPrepare) task
+Going through app/views/index.html to update the config
+Looking for build script HTML comment blocks
+
+Configuration is now:
+
+  concat:
+  { generated: 
+   { files: 
+      [ { dest: '.tmp/concat/styles/vendor.css', src: [] },
+        { dest: '.tmp/concat/styles/main.css',
+          src: [ '{.tmp,app}/styles/main.css' ] },
+        { dest: '.tmp/concat/scripts/vendor.js',
+          src: 
+           [ 'app/bower_components/jquery/dist/jquery.js',
+             'app/bower_components/angular/angular.js',
+             'app/bower_components/angular-resource/angular-resource.js',
+             'app/bower_components/angular-cookies/angular-cookies.js',
+             'app/bower_components/angular-sanitize/angular-sanitize.js',
+             'app/bower_components/angular-route/angular-route.js' ] },
+        { dest: '.tmp/concat/scripts/scripts.js',
+          src: 
+           [ '{.tmp,app}/scripts/app.js',
+             '{.tmp,app}/scripts/controllers/main.js',
+             '{.tmp,app}/scripts/controllers/navbar.js',
+             '{.tmp,app}/scripts/controllers/login.js',
+             '{.tmp,app}/scripts/controllers/signup.js',
+             '{.tmp,app}/scripts/controllers/settings.js',
+             '{.tmp,app}/scripts/services/auth.js',
+             '{.tmp,app}/scripts/services/session.js',
+             '{.tmp,app}/scripts/services/user.js',
+             '{.tmp,app}/scripts/directives/mongooseError.js' ] } ] } }
+
+  uglify:
+  { generated: 
+   { files: 
+      [ { dest: 'dist/public/scripts/vendor.js',
+          src: [ '.tmp/concat/scripts/vendor.js' ] },
+        { dest: 'dist/public/scripts/scripts.js',
+          src: [ '.tmp/concat/scripts/scripts.js' ] } ] } }
+
+  cssmin:
+  { generated: 
+   { files: 
+      [ { dest: 'dist/public/styles/vendor.css',
+          src: [ '.tmp/concat/styles/vendor.css' ] },
+        { dest: 'dist/public/styles/main.css',
+          src: [ '.tmp/concat/styles/main.css' ] } ] } }
+
+Running "concurrent:dist" (concurrent) task
+    
+    Running "svgmin:dist" (svgmin) task
+    
+    Done, without errors.
+    
+    
+    Execution Time (2014-04-15 17:47:35 UTC)
+    loading tasks   2ms  ▇▇ 3%
+    svgmin          1ms  ▇ 1%
+    svgmin:dist    69ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 95%
+    Total 73ms
+        
+    Running "htmlmin:dist" (htmlmin) task
+    File dist/views/404.html created.
+    File dist/views/index.html created.
+    File dist/views/partials/login.html created.
+    File dist/views/partials/main.html created.
+    File dist/views/partials/navbar.html created.
+    File dist/views/partials/settings.html created.
+    File dist/views/partials/signup.html created.
+    
+    Done, without errors.
+    
+    
+    Execution Time (2014-04-15 17:47:35 UTC)
+    loading tasks   2ms  ▇▇▇▇▇ 10%
+    htmlmin         1ms  ▇▇▇ 5%
+    htmlmin:dist   17ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+    Total 20ms
+        
+    Running "imagemin:dist" (imagemin) task
+    ✔ app/images/yeoman.png (saved 5.00 kB)
+    Minified 1 image (saved 5.00 kB)
+    
+    Done, without errors.
+    
+    
+    Execution Time (2014-04-15 17:47:35 UTC)
+    imagemin:dist  770ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100%
+    Total 773ms
+        
+    Running "compass:dist" (compass) task
+    directory .tmp/styles/ 
+       create .tmp/styles/main.css (3.28s)
+    Compilation took 3.338s
+    
+    Done, without errors.
+    
+    
+    Execution Time (2014-04-15 17:47:35 UTC)
+    compass:dist  4.7s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100%
+    Total 4.7s
+    
+Running "autoprefixer:dist" (autoprefixer) task
+Prefixed file ".tmp/styles/main.css" created.
+
+Running "concat:generated" (concat) task
+File ".tmp/concat/styles/vendor.css" created.
+File ".tmp/concat/styles/main.css" created.
+File ".tmp/concat/scripts/vendor.js" created.
+File ".tmp/concat/scripts/scripts.js" created.
+
+Running "ngmin:dist" (ngmin) task
+ngminifying .tmp/concat/scripts/scripts.js, .tmp/concat/scripts/vendor.js
+
+Running "copy:dist" (copy) task
+Created 49 directories, copied 251 files
+
+Running "cdnify:dist" (cdnify) task
+Going through dist/views/404.html, dist/views/index.html to update script refs
+
+Running "cssmin:generated" (cssmin) task
+>> Destination not written because minified CSS was empty.
+File dist/public/styles/main.css created.
+
+Running "uglify:generated" (uglify) task
+File "dist/public/scripts/vendor.js" created.
+File "dist/public/scripts/scripts.js" created.
+
+Running "rev:dist" (rev) task
+dist/public/scripts/scripts.js >> 23ac9a01.scripts.js
+dist/public/scripts/vendor.js >> 0f3a490e.vendor.js
+dist/public/styles/main.css >> 7e8efb13.main.css
+dist/public/images/yeoman.png >> 7d4fb1d2.yeoman.png
+
+Running "usemin:html" (usemin) task
+
+Processing as HTML - dist/views/404.html
+Update the HTML to reference our concat/min/revved script files
+Update the HTML with the new css filenames
+Update the HTML with the new img filenames
+Update the HTML with data-main tags
+Update the HTML with data-* tags
+Update the HTML with background imgs, case there is some inline style
+Update the HTML with anchors images
+Update the HTML with reference in input
+
+Processing as HTML - dist/views/index.html
+Update the HTML to reference our concat/min/revved script files
+<script src="scripts/vendor.js" changed to <script src="scripts/0f3a490e.vendor.js"
+<script src="scripts/scripts.js" changed to <script src="scripts/23ac9a01.scripts.js"
+Update the HTML with the new css filenames
+<link rel="stylesheet" href="styles/main.css" changed to <link rel="stylesheet" href="styles/7e8efb13.main.css"
+Update the HTML with the new img filenames
+Update the HTML with data-main tags
+Update the HTML with data-* tags
+Update the HTML with background imgs, case there is some inline style
+Update the HTML with anchors images
+Update the HTML with reference in input
+
+Processing as HTML - dist/views/partials/login.html
+Update the HTML to reference our concat/min/revved script files
+Update the HTML with the new css filenames
+Update the HTML with the new img filenames
+Update the HTML with data-main tags
+Update the HTML with data-* tags
+Update the HTML with background imgs, case there is some inline style
+Update the HTML with anchors images
+Update the HTML with reference in input
+
+Processing as HTML - dist/views/partials/main.html
+Update the HTML to reference our concat/min/revved script files
+Update the HTML with the new css filenames
+Update the HTML with the new img filenames
+<img src="images/yeoman.png" changed to <img src="images/7d4fb1d2.yeoman.png"
+Update the HTML with data-main tags
+Update the HTML with data-* tags
+Update the HTML with background imgs, case there is some inline style
+Update the HTML with anchors images
+Update the HTML with reference in input
+
+Processing as HTML - dist/views/partials/navbar.html
+Update the HTML to reference our concat/min/revved script files
+Update the HTML with the new css filenames
+Update the HTML with the new img filenames
+Update the HTML with data-main tags
+Update the HTML with data-* tags
+Update the HTML with background imgs, case there is some inline style
+Update the HTML with anchors images
+Update the HTML with reference in input
+
+Processing as HTML - dist/views/partials/settings.html
+Update the HTML to reference our concat/min/revved script files
+Update the HTML with the new css filenames
+Update the HTML with the new img filenames
+Update the HTML with data-main tags
+Update the HTML with data-* tags
+Update the HTML with background imgs, case there is some inline style
+Update the HTML with anchors images
+Update the HTML with reference in input
+
+Processing as HTML - dist/views/partials/signup.html
+Update the HTML to reference our concat/min/revved script files
+Update the HTML with the new css filenames
+Update the HTML with the new img filenames
+Update the HTML with data-main tags
+Update the HTML with data-* tags
+Update the HTML with background imgs, case there is some inline style
+Update the HTML with anchors images
+Update the HTML with reference in input
+
+Running "usemin:css" (usemin) task
+
+Processing as CSS - dist/public/styles/7e8efb13.main.css
+Update the CSS to reference our revved images
+
+Done, without errors.
+
+
+Execution Time (2014-04-15 17:47:34 UTC)
+concurrent:dist    5.7s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36%
+ngmin:dist         7.5s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 46%
+copy:dist         171ms  ▇▇ 1%
+uglify:generated   2.5s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 15%
+Total 16.2s
